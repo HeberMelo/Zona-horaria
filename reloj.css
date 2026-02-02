@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.header {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 3rem;
+}
+
+.logo {
+    display: inline-block;
+    background: #c62947;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.location-name {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.location-name strong {
+    font-weight: 700;
+}
+
+.clock-display {
+    font-size: 10rem;
+    font-weight: 900;
+    color: #333;
+    line-height: 1;
+    margin: 2rem 0;
+    letter-spacing: -0.02em;
+}
+
+.date-display {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.sun-info {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.search-section {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+
+.search-label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#cityInput {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+#cityInput:focus {
+    border-color: #c62947;
+}
+
+#cityInput::placeholder {
+    color: #999;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #c62947;
+    border-top: none;
+    margin-top: -2px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.suggestions.show {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #f8f8f8;
+}
+
+.world-times {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #ddd;
+}
+
+.world-time-item {
+    text-align: center;
+}
+
+.world-time-city {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.world-time-clock {
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.timezone-info {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 2rem;
+    font-weight: 300;
+}
+
+/* Scrollbar styling */
+.suggestions::-webkit-scrollbar {
+    width: 10px;
+}
+
+.suggestions::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+    background: #c62947;
+}
+
+.suggestions::-webkit-scrollbar-thumb:hover {
+    background: #a02238;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .clock-display {
+        font-size: 6rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .date-display {
+        font-size: 1.3rem;
+    }
+
+    .world-times {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .clock-display {
+        font-size: 4rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .world-times {
+        grid-template-columns: 1fr;
+    }
+}
