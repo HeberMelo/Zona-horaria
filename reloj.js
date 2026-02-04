@@ -33,7 +33,6 @@ const worldCities = [
     { name: 'Barcelona', timezone: 'Europe/Madrid', country: 'España' },
     { name: 'Budapest', timezone: 'Europe/Budapest', country: 'Hungría'},
     { name: 'Dunaújváros', timezone: 'Europe/Budapest', country: 'Hungría'},
-
     { name: 'Roma', timezone: 'Europe/Rome', country: 'Italia' },
     { name: 'Berlín', timezone: 'Europe/Berlin', country: 'Alemania' },
     { name: 'Ámsterdam', timezone: 'Europe/Amsterdam', country: 'Países Bajos' },
@@ -254,4 +253,5 @@ updateWorldClocks();
 setInterval(() => {
     updateClock();
     updateWorldClocks();
+
 }, 1000);
